@@ -1,8 +1,8 @@
 ---
-const title = "{{ $json.title }}";
-const price = "{{ $json.price }}";
-const buyLink = "{{ $json.linkCompra }}";
-const coverUrl = "{{ $json.coverUrl }}";
+const title = {{ $json.title }};
+const price = {{ $json.price }};
+const buyLink = {{ $json.linkCompra }};
+const coverUrl = {{ $json.coverUrl }};
 ---
 
 <html>
@@ -10,51 +10,49 @@ const coverUrl = "{{ $json.coverUrl }}";
     <style>
       body {
         font-family: Arial, sans-serif;
-        line-height: 1.6;
-        color: #333;
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
+        line-height: 1.6;
+        background-color: #f8f8f8;
       }
-      img {
+      .cover {
         max-width: 100%;
         height: auto;
-        border-radius: 8px;
+        display: block;
+        margin: 0 auto 20px;
       }
       .cta-button {
         display: inline-block;
         padding: 10px 20px;
-        margin-top: 20px;
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        border-radius: 5px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
         text-decoration: none;
-        font-weight: bold;
-      }
-      .cta-button:hover {
-        background-color: #0056b3;
+        border-radius: 5px;
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <header>
       <h1>{title}</h1>
-      <img src={coverUrl} alt={`Capa do livro ${title}`} />
     </header>
-    
+
+    <img src={coverUrl} alt={`Capa do livro ${title}`} class="cover" />
+
     <section>
       <h2>Sinopse</h2>
       <p>{{ $json.synopsis }}</p>
     </section>
-    
+
     <section>
-      <h2>Sobre o Livro</h2>
+      <h2>Detalhes</h2>
       <p>{{ $json.rawContent }}</p>
     </section>
-    
+
     <footer>
-      <strong>Preço: {price}</strong>
+      <h3>Adquira já o seu por {price}</h3>
       <a href={buyLink} class="cta-button">Comprar</a>
     </footer>
   </body>

@@ -1,0 +1,63 @@
+---
+const title = "{{ $json.title }}";
+const price = "{{ $json.price }}";
+const buyLink = "{{ $json.linkCompra }}";
+const coverUrl = "{{ $json.coverUrl }}";
+---
+
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: auto;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px 0;
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+      }
+      p {
+        margin-bottom: 1em;
+      }
+      .synopsis {
+        font-style: italic;
+        border-left: 4px solid #ddd;
+        padding-left: 15px;
+        margin-bottom: 1.5em;
+        color: #555;
+      }
+      .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1em;
+        color: white;
+        background-color: #007BFF;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .cta-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{title}</h1>
+    <img src={coverUrl} alt={`Capa do livro ${title}`} />
+    <section class="synopsis">
+      <p>{{ $json.synopsis }}</p>
+    </section>
+    <div>
+      <p>{{ $json.rawContent }}</p>
+    </div>
+    <a href={buyLink} class="cta-button">Comprar por {price}</a>
+  </body>
+</html>

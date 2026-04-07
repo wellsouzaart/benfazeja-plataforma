@@ -1,11 +1,43 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import LayoutEditorial from '../layouts/LayoutEditorial.astro';
+import BotaoVenda from '../components/BotaoVenda.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<LayoutEditorial title="O Grande Amor em Florbela Espanca">
+	<article>
+		<header>
+			<h1>O Grande Amor em Florbela Espanca</h1>
+			<p class="subtitle">Antologia Poética</p>
+			<div class="rule" aria-hidden="true"></div>
+		</header>
+
+		<img src="/livro-florbela.jpg" alt="Capa do Livro" class="mx-auto my-8 shadow-xl max-w-sm" />
+
+		<section aria-labelledby="prefacio">
+			<h2 id="prefacio">Prefácio</h2>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, libero vel
+				mauris feugiat, eros massa laoreet erat, vitae interdum neque urna sed justo. A
+				beleza nasce quando a frase respira e a página oferece silêncio.
+			</p>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim
+				consectetur orci, sed tempor sapien tristique sed. Aliquam erat volutpat:
+				nas entrelinhas, a prosa encontra seu compasso e a leitura ganha ritmo.
+			</p>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a nibh a est
+				lacinia tincidunt. Vivamus non leo in erat dignissim tincidunt; ut enim
+				adipiscing, o texto repousa como mancha gráfica de livro.
+			</p>
+
+			<BotaoVenda
+				link="https://editoratrevo.com.br/produto/o-grande-amor-em-florbela-espanca/"
+				preco="R$ 54,00"
+			/>
+		</section>
+	</article>
+</LayoutEditorial>

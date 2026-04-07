@@ -1,0 +1,37 @@
+---
+interface Props {
+	link: string;
+	preco: string | number;
+}
+
+const { link, preco } = Astro.props;
+---
+
+<a class="botao-venda" href={link}>
+	Comprar por {preco}
+</a>
+
+<style>
+	.botao-venda {
+		display: inline-block;
+		margin-top: 2rem;
+		padding: 0.7rem 1.1rem;
+		border: 1px solid #000;
+		color: #1a1a1a;
+		background: transparent;
+		text-decoration: none;
+		font-size: 0.95rem;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		line-height: 1.2;
+		transition: background-color 0.2s ease, color 0.2s ease;
+	}
+
+	.botao-venda:hover,
+	.botao-venda:focus-visible {
+		background: #1a1a1a;
+		color: #fdfbf7;
+		outline: none;
+	}
+</style>
+
